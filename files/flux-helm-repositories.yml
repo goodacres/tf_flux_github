@@ -1,0 +1,12 @@
+apiVersion: v1
+repositories:
+# Cannot yet reach commented out endpoints (WIP)
+#- name: gitlab
+#  url: https://charts.gitlab.io
+#  cache: /var/fluxd/helm/repository/cache/gitlab-index.yaml
+- name: fluxcd
+  url: https://charts.fluxcd.io
+  cache: /var/fluxd/helm/repository/cache/fluxcd-index.yaml
+- name: incubator
+  url: http://storage.googleapis.com/kubernetes-charts-incubator
+  cache: /var/fluxd/helm/repository/cache/incubator-index.yaml

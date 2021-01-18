@@ -1,0 +1,5 @@
+hostAliases:
+- ip: 10.230.50.226
+  hostnames:
+  - atlprccdsgit001
+  - atlprccdsgit001.r2.corp.local
