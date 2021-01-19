@@ -1,11 +1,15 @@
+terraform {
+  required_providers {
+    helm = "~> 1.3.2"   # 1.0.0 and beyond for Helm 3 support
+  }
+}
+
 provider "kubernetes" {
   config_path      = "~/.kube/config"
   load_config_file = true
 }
 
 provider "helm" {
-  version         = "1.3.2"  # We have to use Helm provider version 1.0.0 onwards for Helm 3 compatibility
-
   kubernetes {
     config_path      = "~/.kube/config"
     load_config_file = true
