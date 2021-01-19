@@ -1,5 +1,5 @@
 data "github_repository" "flux" {
-  full_name = var.flux_github_repo_name
+  full_name = "${var.github_user}/${var.flux_github_repo_name}"
 }
 
 resource "tls_private_key" "flux" {

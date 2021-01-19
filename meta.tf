@@ -1,4 +1,7 @@
 terraform {
+  backend "local" {
+    path = "./.terraform.tfstate"
+  }
   required_providers {
     helm = "~> 1.3.2"   # 1.0.0 and beyond for Helm 3 support
   }

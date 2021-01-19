@@ -18,6 +18,10 @@ variable "flux_github_repo_name" {
   type    = string
 }
 
+variable "flux_git_branch" {
+  type    = string
+}
+
 variable "github_user" {
   type    = string
 }

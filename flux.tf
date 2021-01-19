@@ -24,52 +24,45 @@ resource "helm_release" "flux" {
   chart      = "flux"
   version    = var.flux_version
 
-#  values    = [file("${path.module}/files/flux-values.yml")]
-
-#  set {
-#    name  = "ssh.known_hosts"
-#    value = module.ssh_keyscan.ssh_host_keys
-#  }
-
   set {
     name  = "git.pollInterval"
-    value = "1m"
+    value = "10s"
   }
 
   set {
     name  = "git.url"
-    value = data.github_repository.flux.git_clone_url
+    value = data.github_repository.flux.ssh_clone_url
   }
 
-#  set {
-#    name  = "git.branch"
-#    value = var.flux_git_branch
-#  }
+  set {
+    name  = "git.branch"
+    value = var.flux_git_branch
+  }
 
   set {
     name  = "git.path"
     value = var.flux_git_path
   }
 
-#  set {
-#    name  = "git.label"
-#    value = var.cluster_name
-#  }
+  set {
+    name  = "git.label"
+    value = var.host_name
+  }
 
   set {
     name  = "git.secretName"
     value = kubernetes_secret.flux_deploy_key.metadata.0.name
   }
 
-#  set {
-#    name  = "rbac.create"
-#    value = "true"
-#  }
+  set {
+    name  = "rbac.create"
+    value = "true"
+  }
 
-#  set {
-#    name  = "syncGarbageCollection.enabled"
-#    value = "true"
-#  }
+  set {
+    name  = "syncGarbageCollection.enabled"
+    value = "true"
+  }
 
   set {
     name  = "manifestGeneration"
