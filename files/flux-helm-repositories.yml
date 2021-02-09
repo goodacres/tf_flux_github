@@ -10,3 +10,6 @@ repositories:
 - name: incubator
   url: http://storage.googleapis.com/kubernetes-charts-incubator
   cache: /var/fluxd/helm/repository/cache/incubator-index.yaml
+- name: hashicorp
+  url: https://helm.releases.hashicorp.com
+  cache: /var/fluxd/helm/repository/cache/hashicorp-index.yaml
